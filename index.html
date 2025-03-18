@@ -43,12 +43,68 @@
 
     </style>
 -->
+    <style>
+
+.relative {
+position: relative;
+}
+
+.sticky-1 {
+
+    position: sticky;
+    height: 200%;
+    width: 100%;
+    top:0;
+    background-color: #EEEBE1;
+    font-size: 200%
+    font family: <!--putting in a custom font--!>
+    
+
+
+}
+
+
+
+
+
+
+
+.fixed {
+    position:fixed;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #C6DA2C;
+    bottom: 5vw;
+    text-align: center;
+    color: #424240;
+    padding: 1px;
+    z-index: 1;
+    width: 2vw;
+    border-radius: 50px;
+    text-align:center;
+    border: 3px;
+    border-color: beige;
+    border-style: dotted;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 2px;
+    padding: 10px;
+    background-color: #C6DA2C;
+    width: 300px;
+    height: 200px;
+
+}
+
+
+
+</style>
 </head>
 
 
 <body>
   
-    <h1 style="font-size:200%;">TKT.archive</h1>
+    <h1 class="sticky-1">TKT.archive</h1>
     <h2> <a href="about.html">about</a></h2>
 
 
@@ -98,7 +154,14 @@
 </style>
 
 
+<section>
+<div class="relative">
+    <button class="absolute">THIS IS A BUTTON</button>
 
+</div>
+
+
+</section>
 
 
 
@@ -119,13 +182,28 @@
 
 
 
-    <div>
-<a href="#top">back to top</a>
-</div>
 
-<div>
-    
-</div>
+
+
+
+<section>
+    <section class="fixed">
+        <a href="#top">↑</a> <!--position fixed--> 
+</section>
+
+
+
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
 
 </body>
 
