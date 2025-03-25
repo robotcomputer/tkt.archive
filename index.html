@@ -18,32 +18,8 @@
     <title>TKT.archive</title>
 
 <link rel="stylesheet" href="css/style.css">
-    <!--internal editing example-->
- 
-<!-- 
-    (moved this to external)
 
-  <style>
-    #id{
-        property: value;
-        }
-
-    .class{
-        property: value;
-        }
-
-    
-    *{
-        scroll-behavior: smooth;
-        background-color: rgb(218, 215, 207);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 110%;
-        word-spacing: 20%;
-        }
-
-    </style>
--->
-    <style>
+<style>
 
 .relative {
 position: relative;
@@ -51,20 +27,21 @@ position: relative;
 
 .sticky-1 {
 
+    font-family: handjet;
     position: sticky;
-    height: 200%;
     width: 100%;
     top:0;
     background-color: #EEEBE1;
     font-size: 200%
-    font family: <!--putting in a custom font--!>
     
 
 
 }
 
 
-
+.paragraph {
+    font-family: handjet;
+}
 
 
 
@@ -73,11 +50,12 @@ position: relative;
     position:fixed;
     font-family:Arial, Helvetica, sans-serif;
     background-color: #C6DA2C;
-    bottom: 5vw;
+    bottom: 0;
+    right: 0;
     text-align: center;
     color: #424240;
     padding: 1px;
-    z-index: 1;
+    z-index: 1; <!--what is that mean-->
     width: 2vw;
     border-radius: 50px;
     text-align:center;
@@ -96,7 +74,86 @@ button {
 
 }
 
+* { 
+    margin: 0;   /* Remove body margins */
+  }
+  /* hover link */
 
+  a:hover {
+  color: 2319E2;
+  transition: 2s;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-family: jsMath;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -3px;
+  margin-left: 2%;
+  margin-top: 5%;
+}
+
+
+.grid-container {
+  display: grid;
+  /* auto auto auto means three columns */
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+   /* turn off outlines
+  background-color: #2196F3; */ 
+  padding: 0px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2rem;
+}
+
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+/* responsive layout - makes a two column-layout instead of a three-column layout */
+@media (max-width: 800px) {
+.grid-container {
+  display: grid;
+  /* auto auto means two columns */
+  grid-template-columns: auto auto;
+  gap: 10px;
+    /* turn off background 
+  background-color: #2196F3;*/
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin-left: 2%;
+  width: 80vw;
+}
+
+}
 
 </style>
 </head>
@@ -104,9 +161,23 @@ button {
 
 <body>
   
+<header>
+<img class="icon" src="icons\earth_nav.png" alt="earth icon">
+<nav>
+    <ul class="nav_links"></ul>
+    <li></li>
+</nav>
+</header>
+
+
+
+
+
+
     <h1 class="sticky-1">TKT.archive</h1>
     <h2> <a href="about.html">about</a></h2>
 
+    
 
     <p style="color:orangered"> 
         Archive exploring designs of <span style="color:medium seagreen"> information</span> on little slips of paper
@@ -114,6 +185,167 @@ button {
     <!--inline editing example-->
         <p style="color: blue;"> inline editing example </p>
     <br>
+
+
+
+    <section>
+        <div class="grid-container">
+          <div class="item1">
+             <div class="relative">
+              <figure>
+                <img src= images\Image_14.png>
+              </figure>
+             </div>
+          </div>
+          
+          <div class="item2">
+             <div class="relative">
+              <figure>
+                <img src=images\Image_16.png>
+             </div>
+          </div>
+        
+          <div class="item3">
+             <div class="relative">
+              <figure>
+                <img src= images\Image_12.png>
+              </figure>
+             </div>
+          </div>  
+        
+          <div class="item4">
+                <figure>
+                  <img src= images\Image_18.png>
+                </figure>
+          </div>
+          
+          <div class="item5">
+                <figure>
+                  <img src= images\Screenshot_20250324_161023_Google_Play_services.png>
+                </figure>
+          </div>
+          
+          <div class="item6">
+                <figure>
+                  <img src= images\Visual_Language-ITP-Fall-2018.png>
+                </figure>
+          </div>
+          
+          <div class="item7">
+                <figure>
+                  <img src= images\concertrandom.png>
+                </figure>
+          </div>
+          
+          <div class="item8">
+                <figure>
+                  <img src= images\4289cd87945201.5e7b80299a3b0.png>
+                </figure>  
+          </div>  
+        
+        </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!--table of contents using sticky links-->
@@ -146,60 +378,63 @@ button {
 
 
 
-<!--ordered list (ul unordered list)-->    
-<ol style= font-size:50%>
-    <li>nobody talks about <span style="color:violet">fightclub</span></li>
-    <li>nobody talks about <span style="color:violet">fightclub</span></li>
-    <li>only 2 men per <span style="color:violet">fight</span></li>
-</style>
-
-
-<section>
-<div class="relative">
-    <button class="absolute">THIS IS A BUTTON</button>
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-</ol>
-
-
-    <br>
-    <img src = images\piskel.gif width="100" height="100"><img src = images\piskel.gif width="100" height="100"><img src = images\piskel.gif width="100" height="100">
-   
-
-
-
-
-
-
-
-
-
-
-
+<!--back to top-->
 <section>
     <section class="fixed">
         <a href="#top">↑</a> <!--position fixed--> 
-</section>
-
-
-
-
-
-
+      </section>
     </div>
 </section>
 
 
+
+<div class="masonry-with-columns">
+  <div>
+    1
+  </div>
+  <div>
+    2
+  </div>
+  <div>
+    3
+  </div>
+  <div>
+    4
+  </div>
+  <div>
+    5
+  </div>
+  <div>
+    6
+  </div>
+  <div>
+    7
+  </div>
+  <div>
+    8
+  </div>
+  <div>
+    9
+  </div>
+  <div>
+    10
+  </div>
+  <div>
+    11
+  </div>
+  <div>
+    12
+  </div>
+  <div>
+    13
+  </div>
+  <div>
+    14
+  </div>
+  <div>
+    15
+  </div>
+</div>
 
 
 
