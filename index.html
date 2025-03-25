@@ -55,7 +55,7 @@ position: relative;
     text-align: center;
     color: #424240;
     padding: 1px;
-    z-index: 1; <!--what is that mean-->
+    z-index: 1;
     width: 2vw;
     border-radius: 50px;
     text-align:center;
@@ -99,44 +99,10 @@ h1 {
 }
 
 
-.grid-container {
-  display: grid;
-  /* auto auto auto means three columns */
-  grid-template-columns: auto auto auto auto;
-  gap: 20px;
-   /* turn off outlines
-  background-color: #2196F3; */ 
-  padding: 0px;
-}
-
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.5);
+
   text-align: center;
-  padding: 20px 0;
-  font-size: 2rem;
-}
-
-.item1 {
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-
-/* responsive layout - makes a two column-layout instead of a three-column layout */
-@media (max-width: 800px) {
-.grid-container {
-  display: grid;
-  /* auto auto means two columns */
-  grid-template-columns: auto auto;
-  gap: 10px;
-    /* turn off background 
-  background-color: #2196F3;*/
-  padding: 10px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.5);
-  text-align: center;
-  padding: 20px 0;
+  padding: 50px 0;
   font-size: 30px;
 }
 
@@ -153,7 +119,16 @@ h2 {
   width: 80vw;
 }
 
+.container-heading {
+display:flex;
+position:sticky;
+background-color: #EEEBE1; 
+margin:0;
+top:0;
+border-radius: 47;
 }
+
+
 
 </style>
 </head>
@@ -161,222 +136,16 @@ h2 {
 
 <body>
   
-<header>
-<img class="icon" src="icons\earth_nav.png" alt="earth icon">
-<nav>
-    <ul class="nav_links"></ul>
-    <li></li>
-</nav>
-</header>
-
-
-
-
-
-
+<div class="container-heading">
     <h1 class="sticky-1">TKT.archive</h1>
     <h2> <a href="about.html">about</a></h2>
-
+  </div>
     
 
     <p style="color:orangered"> 
         Archive exploring designs of <span style="color:medium seagreen"> information</span> on little slips of paper
         </p>
-    <!--inline editing example-->
-        <p style="color: blue;"> inline editing example </p>
-    <br>
-
-
-
-    <section>
-        <div class="grid-container">
-          <div class="item1">
-             <div class="relative">
-              <figure>
-                <img src= images\Image_14.png>
-              </figure>
-             </div>
-          </div>
-          
-          <div class="item2">
-             <div class="relative">
-              <figure>
-                <img src=images\Image_16.png>
-             </div>
-          </div>
-        
-          <div class="item3">
-             <div class="relative">
-              <figure>
-                <img src= images\Image_12.png>
-              </figure>
-             </div>
-          </div>  
-        
-          <div class="item4">
-                <figure>
-                  <img src= images\Image_18.png>
-                </figure>
-          </div>
-          
-          <div class="item5">
-                <figure>
-                  <img src= images\Screenshot_20250324_161023_Google_Play_services.png>
-                </figure>
-          </div>
-          
-          <div class="item6">
-                <figure>
-                  <img src= images\Visual_Language-ITP-Fall-2018.png>
-                </figure>
-          </div>
-          
-          <div class="item7">
-                <figure>
-                  <img src= images\concertrandom.png>
-                </figure>
-          </div>
-          
-          <div class="item8">
-                <figure>
-                  <img src= images\4289cd87945201.5e7b80299a3b0.png>
-                </figure>  
-          </div>  
-        
-        </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--table of contents using sticky links-->
-        <div class="sticky">
-        <h3 class="figcaption"> jump ahead:<br>
-            <a href="#chapter1">Chapter 1:</a><br/>
-            <a href="#chapter2">Chapter 2:</a><br/>
-            <a href="#chapter3">Chapter 3:</a><br/>
-            <hr>
-        </h3></div>
-        
-
-        <div class="sticky">
-            <h3 id="chapter1"><span style="color:blue;">Chapter 1:</span></h3><br>
-              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>  
-            
-              <div class="sticky">
-                <h3 id="chapter2"><span style="color:blue;">Chapter 2:</span></h3><br>
-                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-            
-                  <div class="sticky">
-                    <h3 id="chapter3"><span style="color:blue;">Chapter 3:</span></h3><br>
-                      <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
-                        </p>
-
-
-
-        </div>
-
-
-
+ 
 
 <!--back to top-->
 <section>
@@ -389,29 +158,34 @@ h2 {
 
 
 <div class="masonry-with-columns">
+  
+  <!--single cell of grid-->
   <div>
-    1
+    <img src= images\Image_14.png>
+  </div>
+  <!--single cell of grid-->
+
+  <div>
+    
+    <img src=images\Image_16.png>
   </div>
   <div>
-    2
+    <img src= images\Image_12.png>
   </div>
   <div>
-    3
+    <img src= images\Image_18.png>
   </div>
   <div>
-    4
+    <img src= images\Screenshot_20250324_161023_Google_Play_services.png>
   </div>
   <div>
-    5
+    <img src= images\Visual_Language-ITP-Fall-2018.png>
   </div>
   <div>
-    6
+    <img src= images\concertrandom.png>
   </div>
   <div>
-    7
-  </div>
-  <div>
-    8
+    <img src= images\4289cd87945201.5e7b80299a3b0.png>
   </div>
   <div>
     9

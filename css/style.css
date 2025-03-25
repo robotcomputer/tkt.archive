@@ -1,10 +1,13 @@
-#id{
+/*#id{
    property: value;
  }
 
 .class{       
     property: value;
 }   
+   */
+
+
    
 *{      
     margin:0;
@@ -13,8 +16,6 @@
     text-decoration: none;
         scroll-behavior: smooth;
         background-color: rgb(66, 66, 64);
-        font-size: 110%;
-        word-spacing: 20%;
         }
 /*position fixed back to top button*/
 
@@ -43,9 +44,10 @@ text-align: center;
 
 body {
     margin: 0;
-    padding: 1rem;
   }
   
+
+  /* masonry grid */
   .masonry-with-columns {
     columns: 4 200px;
     column-gap: 1rem;
@@ -207,7 +209,7 @@ body {
     line-height: 410px;
   }
 
-
+/* masonry grid */
 
 
 
