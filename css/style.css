@@ -6,13 +6,9 @@
 
 /*font*/
 @font-face {
-  font-family:    ;
-  src:url('');
-  src: url('');
-  src: url('');
-
-  font-weight: normal;
-  font-style: normal;
+  font-family:'jsMath-cmti10'    ;
+  src:url('fonts\jsMath-cmti10.woff');
+  font-style: italic;
 }
 
 .navbar {
@@ -24,7 +20,7 @@
   top: 0;
   left: 0;
   right: 0;
-  border-radius:0px 0px 47px 47px;
+  border-radius:0px 0px 24px 24px;
   background-color: #EEEBE1;
   color: #424240;
   padding: 10px 20px;
@@ -32,10 +28,16 @@
 }
 
 .wordmark {
-  font-size: 24px;
-  font-weight: bold;
+  font-family: 'jsMath-cmti10';
+  font-size: 34px;
   text-align: left;
+  text-decoration: none;
   flex-grow: 1; /* Makes the wordmark take as much space as it needs */
+  color:#424240
+}
+
+.wordmark:hover {
+  color: #2319E2;
 }
 
 .nav-icons {
@@ -60,6 +62,10 @@
   align-items: center;
 }
 
+.icon:hover {
+  color:#2319E2
+}
+
 .icon img {
   width: 24px; /* icon size */
   height: 24px;
@@ -67,6 +73,44 @@
   transition: transform 0.3s ease;
 }
 
+.menu-icon {
+  display: none; /*hidden */
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/*dropdown menu*/
+.dropdown {
+  display: none; /* hidden */
+  position: absolute;
+  top: 40px; 
+  right: 0; 
+  width:63px;
+  background-color: #EEEBE1;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+}
+
+.dropdown.active {
+  display: block; /* show when active */
+}
+
+.dropdown .icon {
+  margin: 10px 0;
+}
+
+@media (max-width: 475px) {
+  /* hide the regular icons on small screens */
+  .nav-icons .icon {
+      display: none;
+  }
+
+  /* show the menu icon on small screens */
+  .menu-icon {
+      display: block;
+  }
+}
 
 /* masonry grid */
 .masonry-with-columns {
