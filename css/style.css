@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+background-color: #424240;
+color: #EEEBE1;
+}
 /*font*/
 @font-face {
   font-family:'jsMath-cmti10'    ;
@@ -25,6 +29,13 @@
   color: #424240;
   padding: 10px 20px;
   z-index: 1000; /*navbar stays on top */
+  border-bottom: 2px dotted #424240;
+}        
+
+/* hover link */
+a:hover {
+ color: 2319E2;
+ transition: 2s;
 }
 
 .wordmark {
@@ -32,12 +43,14 @@
   font-size: 34px;
   text-align: left;
   text-decoration: none;
-  flex-grow: 1; /* Makes the wordmark take as much space as it needs */
+  flex-grow: 1; /* makes the wordmark take as much space as it needs */
   color:#424240
+
 }
 
 .wordmark:hover {
   color: #2319E2;
+  transition: 2s;
 }
 
 .nav-icons {
@@ -62,10 +75,6 @@
   align-items: center;
 }
 
-.icon:hover {
-  color:#2319E2
-}
-
 .icon img {
   width: 24px; /* icon size */
   height: 24px;
@@ -86,10 +95,9 @@
   top: 40px; 
   right: 0; 
   width:63px;
-  background-color: #EEEBE1;
+  background-color:#EEEBE1;
   padding: 10px;
   border-radius: 0 0 5px 5px;
-  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
 }
 
 .dropdown.active {
@@ -115,139 +123,133 @@
 /* masonry grid */
 .masonry-with-columns {
     columns: 4 200px;
-    column-gap: 1rem;
+    column-gap: .5rem;
   }
+
+  .grid-container {
+    margin-top: 60px; 
+    border-radius: 24px 24px 0 0;
+    background-color:#EEEBE1; 
+    overflow: hidden; 
+    position: relative;
+    z-index: 1; /* grid container stays below nav */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
   .masonry-with-columns div {
     width: 150px;
-    background: #EC985A;
-    color: white;
+    background: #EEEBE1;
+    color: #EEEBE1;
     margin: 0 0rem 0rem 0;
     display: inline-block;
     width: 100%;
+    height:fit-content;
     text-align: center;
-    font-family: system-ui;
     font-weight: 900;
     font-size: 2rem;
-    background-size: cover;
+    overflow: hidden;
+    position: relative;
+
   }
+  .masonry-with-columns div img {
+    width:100%;
+    height:auto;
+    object-fit: cover;
+    display: block;
+  }
+
   /* single cell grid */
   .masonry-with-columns div:nth-child(1) {
-    height: 101px;
-    line-height: 101px;
-   object-fit: fill;
+   height: fit-content;
+  
   }
   .masonry-with-columns div:nth-child(2) {
-    height: 489px;
-    line-height: 489px;
-    object-fit: fill;
+    height: fit-content;
   }
   .masonry-with-columns div:nth-child(3) {
-    height: 419px;
-    line-height: 419px;
-    
+    height: fit-content;  
   }
   .masonry-with-columns div:nth-child(4) {
-    height: 294px;
-    line-height: 294px;
-   
+    height: fit-content;
   }
   .masonry-with-columns div:nth-child(5) {
-    height: 446px;
-    line-height: 446px;
-   
+    height: fit-content;
   }
   .masonry-with-columns div:nth-child(6) {
-    height: 174px;
-    line-height: 174px;
-    
+    height:fit-content; 
   }
   .masonry-with-columns div:nth-child(7) {
-    height: 496px;
-    line-height: 496px;
-    
+    height:fit-content;  
   }
   .masonry-with-columns div:nth-child(8) {
-    height: 131px;
-    line-height: 131px;
-   
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(9) {
-    height: 312px;
-    line-height: 312px;
-    
+    height:fit-content; 
   }
   .masonry-with-columns div:nth-child(10) {
-    height: 207px;
-    line-height: 207px;
-    background-size: cover;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(11) {
-    height: 155px;
-    line-height: 155px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(12) {
-    height: 355px;
-    line-height: 355px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(13) {
-    height: 289px;
-    line-height: 289px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(14) {
-    height: 212px;
-    line-height: 212px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(15) {
-    height: 296px;
-    line-height: 296px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(16) {
-    height: 170px;
-    line-height: 170px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(17) {
-    height: 194px;
-    line-height: 194px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(18) {
-    height: 195px;
-    line-height: 195px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(19) {
-    height: 316px;
-    line-height: 316px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(20) {
-    height: 320px;
-    line-height: 320px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(21) {
-    height: 227px;
-    line-height: 227px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(22) {
-    height: 219px;
-    line-height: 219px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(23) {
-    height: 386px;
-    line-height: 386px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(24) {
-    height: 129px;
-    line-height: 129px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(25) {
-    height: 355px;
-    line-height: 355px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(26) {
-    height: 350px;
-    line-height: 350px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(27) {
-    height: 143px;
-    line-height: 143px;
+    height:fit-content;
   }
   .masonry-with-columns div:nth-child(28) {
     height: 404px;
