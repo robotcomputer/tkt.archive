@@ -10,9 +10,14 @@ color: #EEEBE1;
 }
 /*font*/
 @font-face {
-  font-family:'jsMath-cmti10'    ;
+  font-family:'jsMath-cmti10';
   src:url('fonts\jsMath-cmti10.woff');
   font-style: italic;
+}
+
+@font-face{
+  font-family:'Handjet';
+  src:url('fonts\Handjet.woff')
 }
 
 .navbar {
@@ -117,10 +122,6 @@ a:hover {
   display: block;
   padding-bottom: 20px;
 
-  background-image: url('icons\Union.png.png'); 
-  background-repeat: no-repeat; 
-  background-position: bottom center; 
-  background-size: 100% auto;
 }
 
 .tags {

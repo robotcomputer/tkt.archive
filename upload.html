@@ -5,15 +5,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TKT.archive</title>
     <link rel="stylesheet" href="css/style.css">
-
 <style>
-</style>
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-family: 'jsMath-cmti10';
+  font-size: 6rem;
+  letter-spacing: -2px;
+  color:#424140;
+  padding-left: 10px;
+  padding-bottom: 0;
+}
+
+h2 {
+  font-family:"Handjet";
+  font-size:px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: #424140;
+  padding-left:10px;
+}
+
+.main-content {
+    margin-top: 60px;
+    width:100%;
+}
+
+.submit-box {
+          width: 100vw;
+          padding: 10px;
+          background-color:#EEEBE1;
+          text-align: left;
+          border-radius: 24px 24px 0 0;
+          padding-left: 0;
+          padding-right: 0%;
+        }
+
+        .submit-box h1 {
+          margin: 0;
+          font-size: 2.5rem;
+          font-weight: lighter;
+        }
+
+        .line {
+          width: 100vw;
+          border-top: 1px solid #424140;
+          margin: 20px 0;
+          padding-left: 0;
+          padding-right: 0%;
+          margin: 10px 0;
+        }
+
+        .subheading-box {
+          width: 100vw;
+          padding-left: 10px;
+          background-color: #EEEBE1;
+          padding-left: 0;
+          padding-right: 0;
+          
+        }
+
+        .subheading-box h2 {
+          margin: 0;
+          font-size: 1.8rem;
+        }
+
+        .content-box {
+          background-color: #d1d1d1;
+          padding:0;
+        }
+
+</style>
 </head>
 
 <body>
-    <h1>Upload</h1>
-    <p>Be a part of the archive!</p>
-</body>   
+  <header class="navbar">
+    <a href="/index.html" class="wordmark">TKT.archive</a></div>
+    <div class="nav-icons">
+        <div class="divider"></div>
+        <a href="global_src.html"><div class="icon"><img src="icons\globe.png" alt="World" /></a></div>
+        <a href="library.html"><div class="icon"><img src="icons\Folder_open_alt.png" alt="Library" /></a></div>
+        <div class="icon"><img src="icons\Regroup.png" alt="Random" /></div>
+        <a href="about.html"><div class="icon"><img src="icons\Info.png" alt="About" /></a></div>
+        <a href="upload.html"><div class="icon"><img src="icons\Load_list_alt_light@3x.png" alt="Upload" /></a></div>
+    </div>
 
+
+<div class="menu-icon" onclick="toggleDropdown()">
+  <img src="icons\Menu.png" alt="Menu"/>
+</div>
+</div>
+
+<div class="dropdown">
+  <a href="global_src.html"><div class="icon"><img src="icons\globe.png" alt="World" /></a></div>
+  <a href="library.html"><div class="icon"><img src="icons\Folder_open_alt.png" alt="Library" /></a></div>
+  <div class="icon"><img src="icons\Regroup.png" alt="Random" /></div>
+  <a href="about.html"><div class="icon"><img src="icons\Info.png" alt="About" /></a></div>
+  <a href="upload.html"><div class="icon"><img src="icons\Load_list_alt_light@3x.png" alt="Upload" /></a></div>
+</div>
+</header>
+
+<div class="main-content">
+    <div class="submit-box">
+      <h1>Submit</h1>
+      <div class="line"></div>
+    </div>
+
+    <!-- Subheading Box -->
+    <div class="subheading-box">
+      <h2>Be a part of the collective!</h2>
+      <div class="line"></div>
+      <div class="content-box">
+        <p>bla bla</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function toggleDropdown() {
+      const dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('active');
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>
