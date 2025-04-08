@@ -11,7 +11,7 @@ color: #EEEBE1;
 /*font*/
 @font-face {
   font-family:'jsMath-cmti10';
-  src:('fonts\jsMath-cmti10.woff');
+  src: url('./fonts\jsMath-cmti10.woff');
   font-style: italic;
 }
 
