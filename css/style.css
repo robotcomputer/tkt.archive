@@ -108,6 +108,29 @@ a:hover {
   margin: 10px 0;
 }
 
+.image-container {
+  margin-top: 60px;
+  background-color: #EEEBE1;
+  position:relative;
+  width:auto;
+  height: auto;
+  display: block;
+  padding-bottom: 20px;
+
+  background-image: url('icons\Union.png.png'); 
+  background-repeat: no-repeat; 
+  background-position: bottom center; 
+  background-size: 100% auto;
+}
+
+.tags {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #424240;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
 @media (max-width: 475px) {
   /* hide the regular icons on small screens */
   .nav-icons .icon {
@@ -134,17 +157,6 @@ a:hover {
     position: relative;
     z-index: 1; /* grid container stays below nav */
   }
-
-
-
-
-
-
-
-
-
-
-
 
   .masonry-with-columns div {
     width: 150px;
