@@ -52,21 +52,32 @@
     <div class="tags" id="tags">
     </div>
 
-  <script>
+    <script>
+      const tagMapping = {
+         'tag1': 'Transport',
+         'tag2': 'General Admission',
+         'tag3': 'Service',
+         'tag4': 'Misc',
+        };
+  
+        //get image url and tags
     const urlParams = new URLSearchParams(window.location.search);
     const image = urlParams.get('image');
     const tags = urlParams.get('tags');
 
+    //set image source
     document.getElementById('image').src = image;
 
     if (tags) {
-      const tagList = tags.split(','); // Split tags by commas
+      const tagList = tags.split(',');
       const tagsContainer = document.getElementById('tags');
-      tagsContainer.innerHTML = '<strong>Tags:</strong> ' + tagList.join(', ');
+      const mappedTags = tagList.map(tag => tagMapping[tag]);
+        // display tags w/ names
+        tagsContainer.innerHTML = '<strong>Tags:</strong> ' + mappedTags.join(', ');
     }
 
    
-    
+</script>
   </script>
 </body>
 </html>
