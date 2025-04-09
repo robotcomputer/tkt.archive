@@ -11,7 +11,7 @@ color: #EEEBE1;
 /*font*/
 @font-face {
   font-family:'jsMath-cmti10';
-  src: url('../fonts/jsmath-cmti10.woff');
+  src: url('../fonts/jsMath-cmti10.woff2');
   font-style: italic;
 }
 
@@ -42,20 +42,14 @@ color: #EEEBE1;
   border-bottom: 2px dotted #424240;
 }        
 
-/* hover link */
-a:hover {
- color: 2319E2;
- transition: 2s;
-}
-
 .wordmark {
   font-family: 'jsmath-cmti10';
+  font-style: italic;
   font-size: 34px;
   text-align: left;
   text-decoration: none;
   flex-grow: 1; /* makes the wordmark take as much space as it needs */
   color:#424240
-
 }
 
 .wordmark:hover {
