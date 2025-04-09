@@ -11,7 +11,7 @@ color: #EEEBE1;
 /*font*/
 @font-face {
   font-family:'jsMath-cmti10';
-  src: url('./fonts/jsmath-cmti10.woff');
+  src: url('https://robotcomputer.github.io/tkt.archive/fonts/jsmath-cmti10.woff');
   font-style: italic;
 }
 
