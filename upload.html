@@ -137,6 +137,12 @@ h2 {
     font-size: 24px;
 }
 
+.upload-stack {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .file-input {
     display: none;
 }
@@ -224,11 +230,13 @@ h2 {
             <div class="icon-wrapper">
                 <img src="icons\Img_load_box.svg" alt="Upload Icon" class="upload-icon">
             </div>
+            <div class="upload-stack">
             <div class="upload-text">
                 <p>upload.photo</p>
             </div>
             <input type="file" id="file-upload" class="file-input" />
         </div>
+      </div>
         <div class="form-info">
             <!-- form  -->
             <form>
