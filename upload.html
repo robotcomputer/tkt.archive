@@ -25,7 +25,7 @@ img {
 
 h1 {
   font-family: 'jsMath-cmti10';
-  font-size: 60px;
+  font-size: 34px;
   letter-spacing: -2px;
   color:#424140;
   padding-left: 10px;
@@ -34,11 +34,12 @@ h1 {
 
 h2 {
   font-family:"Handjet";
-  font-size:24px;
+  font-size:20px;
   font-weight: 400;
   letter-spacing: -0.5px;
   color: #424140;
   padding-left:10px;
+  
 }
 
 .main-content {
@@ -48,46 +49,130 @@ h2 {
 
 .submit-box {
           width: 100vw;
-          padding: 10px;
+          padding: 10px 0;
           background-color:#EEEBE1;
           text-align: left;
           border-radius: 24px 24px 0 0;
-          padding-left: 0;
-          padding-right: 0%;
+          margin-bottom: 0;
         }
 
         .submit-box h1 {
           margin: 0;
           font-weight: lighter;
+          padding-bottom: 0;
         }
 
         .line {
           width: 100vw;
           border-top: 1px solid #424140;
-          margin: 20px 0;
+          margin-top: 5px 0;
           padding-left: 0;
           padding-right: 0%;
-          margin: 10px 0;
+          margin:2px 0;
         }
           
-
         .subheading-box {
           width: 100vw;
           padding-left: 10px;
           background-color: #EEEBE1;
           padding-left: 0;
           padding-right: 0;
+          margin-top: -10px;
           
         }
 
         .subheading-box h2 {
           margin: 0;
+          padding-top: 0;
         }
 
         .content-box {
-          background-color: #d1d1d1;
+          background-color: #EEEBE1;
           padding:0;
         }
+.upload-form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.upload-photo-box {
+    width: 40%; 
+    padding: 20px;
+    background-color: #D9D9D9;
+    border-radius: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    Height:80vw;
+    text-align:center;
+}
+
+.icon-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.upload-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.upload-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'jsmath-cmti10';
+    color:#424140;
+    font-size: 24px;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-photo-box:hover {
+    cursor: pointer;
+    background-color: #B1EB12;
+    opacity: 70%;
+}
+
+.upload-photo-box:hover .file-input {
+    display: block;
+}
+
+.form-info {
+    width: 60%;
+    padding: 20px;
+    background-color: #EEEBE1;
+}
+
+@media (max-width: 475px) {
+    .upload-form-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .upload-photo-box {
+        width: 100%; 
+    }
+
+    .form-info {
+        width: 100%;
+    }
+}
+
+
 
 </style>
 </head>
@@ -125,33 +210,50 @@ h2 {
       <div class="line"></div>
     </div>
 
-    <!-- Subheading Box -->
+    <!-- subheading Box -->
     <div class="subheading-box">
       <h2>Be a part of the collective!</h2>
       <div class="line"></div>
       <div class="content-box">
-        <p>bla bla</p>
+       
+       
+       <!--upload photo-->
+       
+       <div class="upload-form-container">
+        <div class="upload-photo-box">
+            <div class="icon-wrapper">
+                <img src="icons\Img_load_box.svg" alt="Upload Icon" class="upload-icon">
+            </div>
+            <div class="upload-text">
+                <p>upload.photo</p>
+            </div>
+            <input type="file" id="file-upload" class="file-input" />
+        </div>
+        <div class="form-info">
+            <!-- form  -->
+            <form>
+                <!-- form fields -->
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -168,31 +270,6 @@ h2 {
       dropdown.classList.toggle('active');
   }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
