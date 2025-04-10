@@ -244,6 +244,23 @@ h2 {
   opacity: 1;
 }
 
+.submit-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #EEEBE1;
+  border: 1px solid;
+  border-color: #424140;
+  color: #424140;
+  cursor: pointer;
+  font-family: 'handjet';
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #B1EB12;
+  opacity: 70%;
+}
+
 @media (max-width: 475px) {
   .input-box {
     flex-wrap: wrap;
@@ -381,6 +398,11 @@ h2 {
     <input type="text" id="source" name="source" />
   </div>
 </div>
+
+<div class= "input-box">
+  <button type="submit" class="submit-button">Submit</button>
+</div>
+
 
       </div>
     </div>
