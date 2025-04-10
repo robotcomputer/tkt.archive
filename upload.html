@@ -35,10 +35,11 @@ h1 {
 h2 {
   font-family:"Handjet";
   font-size:20px;
-  font-weight: 400;
+  font-weight:500;
   letter-spacing: -0.5px;
   color: #424140;
   padding-left:10px;
+  font-style: normal;
   
 }
 
@@ -95,7 +96,9 @@ h2 {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    margin-top: 20px;
+    margin-top: -2px;
+    padding:0;
+
 }
 
 .upload-photo-box {
@@ -158,9 +161,115 @@ h2 {
 }
 
 .form-info {
+    padding-top: 50px;
     width: 60%;
-    padding: 20px;
     background-color: #EEEBE1;
+    margin-right: 20px;
+
+    
+}
+
+.input-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #EEEBE1;
+  margin-bottom: 20px;
+  font-family: 'handjet';
+  color: #424140;
+}
+
+
+.input-box label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+.input-box input,
+.input-box select {
+  padding: 10px;
+  border: 1px solid #424140;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: 'handjet';
+  background-color: #EEEBE1;
+  flex:1;
+}
+
+.info-icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.info-icon {
+  cursor: pointer;
+}
+
+.info-icon img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #424140;
+  color: #EEEBE1;
+  text-align: left;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  position: absolute;
+  z-index: 1;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: normal;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  word-wrap: break-word;
+  width: 170px;
+  max-width: none;
+}
+
+.info-icon:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 475px) {
+  .input-box {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .info-icon {
+    margin: 8px 0;
+  }
+  .tooltip-text {
+    top: 0; 
+    left: 100%; 
+    transform: translateX(10px); 
+    width: 170px; 
+    max-width: 170px; 
+    white-space: normal; 
+    font-size: 16px;
+    opacity: 0; 
+  }
+
+  .info-icon:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
 }
 
 @media (max-width: 475px) {
@@ -177,7 +286,6 @@ h2 {
         width: 100%;
     }
 }
-
 
 
 </style>
@@ -237,39 +345,50 @@ h2 {
             <input type="file" id="file-upload" class="file-input" />
         </div>
       </div>
-        <div class="form-info">
-            <!-- form  -->
-            <form>
-                <!-- form fields -->
-                <label for="description">Description:</label>
-                <input type="text" id="description" name="description">
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+       
+<div class="form-info">
+  <!-- form  -->
+  <div class="input-box">
+    <label for="name">Name:</label>
+    <div class="info-icon">
+      <img src="icons/Info2.svg" alt="Info" />
+      <span class="tooltip-text">Enter the name as you'd like it displayed in the archive.</span>
     </div>
-    
+  
+    <input type="text" id="name" name="name" />
+  </div>
+  
+  <div class="input-box">
+    <label for="type">Type:</label>
+  
+    <!-- tooltip -->
+    <div class="info-icon">
+      <img src="icons/info2.svg" alt="Info" />
+      <span class="tooltip-text">Choose the category that best describes your submission or leave it blank if you are unsure.</span>
+    </div>
+  
+    <select id="type" name="type">
+      <option value="blank"></option>
+      <option value="transport">Transport</option>
+      <option value="general-admission">General Admission</option>
+      <option value="service">Service</option>
+      <option value="misc">Misc</option>
+    </select>
+  </div>
 
-
-
-
-
-
-
-
-
-
+  <div class="input-box">
+    <label for="source">Source:</label>
+    <div class="info-icon">
+      <img src="icons/Info2.svg" alt="Info" />
+      <span class="tooltip-text">Provide the source or origin of the content you're submitting.</span>
+    </div>
+    <input type="text" id="source" name="source" />
+  </div>
+</div>
 
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
 
 
 <script>
@@ -278,14 +397,6 @@ h2 {
       dropdown.classList.toggle('active');
   }
 </script>
-
-
-
-
-
-
-
-
 
 </body>
 </html>
