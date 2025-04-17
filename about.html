@@ -8,6 +8,128 @@
     <link rel="stylesheet" href="css/style.css">
 <style>
 
+.card-container {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.card {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.card-front {
+  position: relative;
+  background-color: #EEEBE1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.id-photo {
+  width: 120px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+.id-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.id-main {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.id-content {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.id-info {
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.id-info h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #424140;
+  letter-spacing: 1px;
+}
+
+.id-info p {
+  margin: 2px 0;
+  color: #424140;
+}
+
+.barcode {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 160px;
+}
+
+.barcode img {
+  width: 100%;
+  height: auto;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: #EEEBE1;
+  color: #424140;
+  font-family: 'Handjet', sans-serif;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.id-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-image: url('images/moth.png'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; 
+  pointer-events: none;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
 </style>
 
 </head>
@@ -48,26 +170,43 @@
           dropdown.classList.toggle('active');
       }
     </script>
-       <br>   <br>   <br>   <br>
-    
-    <h2>About</h2>
- <p>
-    Student who likes making shit </p>
-    <br>
-    <img src=images\duckduck.gif>
-   
-   
-<script src="random.js"></script>   
+     <div class="card-container">
+      <div class="card">
+        <div class="card-front">
+          <div class="id-main">
+            <div class="id-info">
+              <h3>TKT.archive</h3>
+              <p>ARCHIVE OPERATOR</p>
+              <p>ID#: 001</p>
+              <p>Issued: 04/2025</p>
+            </div>
+        
+            <div class="id-photo">
+              <img src="images/id-photo.png" alt="ID Front" class="id-image">
+            </div>
+          </div>
+        
+          <div class="barcode">
+            <img src="images/barcode.png" alt="Barcode">
+          </div>
+        </div>
+
+        <div class="card-back">
+          <h2>More Info</h2>
+          <p>Obsessed with archives, fonts, weird scanners, and tiny data. Trying to preserve the ephemeral.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <script>
+      document.querySelector('.card').addEventListener('click', function () {
+        this.classList.toggle('flipped');
+      });
+    </script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
 </html>
