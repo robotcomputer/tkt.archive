@@ -1,92 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Page</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Page</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .tags,
+    .extra-info {
+      font-family: 'Handjet';
+      padding-left: 20px;
+      padding-top: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #424140;
+    }
 
-<style>
-.tags {
-  font-family: 'Handjet';
-  padding-left: 20px;
-}
-</style>
-
-
-
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-        <header class="navbar">
-          <a href="index.html" class="wordmark">TKT.archive</a></div>
-          <div class="nav-icons">
-              <div class="divider"></div>
-              <a href="global_src.html"><div class="icon"><img src="icons\globe.png" alt="World" /></a></div>
-              <a href="library.html"><div class="icon"><img src="icons\Folder_open_alt.png" alt="Library" /></a></div>
-              <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
-              <a href="about.html"><div class="icon"><img src="icons\Info.png" alt="About" /></a></div>
-              <a href="upload.html"><div class="icon"><img src="icons\Load_list_alt_light@3x.png" alt="Upload" /></a></div>
-          </div>
-      
-      
-      <div class="menu-icon" onclick="toggleDropdown()">
-        <img src="icons\Menu.png" alt="Menu"/>
-      </div>
-      </div>
-      
-      <div class="dropdown">
-        <a href="global_src.html"><div class="icon"><img src="icons\globe.png" alt="World" /></a></div>
-        <a href="library.html"><div class="icon"><img src="icons\Folder_open_alt.png" alt="Library" /></a></div>
-        <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
-        <a href="about.html"><div class="icon"><img src="icons\Info.png" alt="About" /></a></div>
-        <a href="upload.html"><div class="icon"><img src="icons\Load_list_alt_light@3x.png" alt="Upload" /></a></div>
-      </div>
-      
-      
-      </header>
-      
-      <script>
-        function toggleDropdown() {
-            const dropdown = document.querySelector('.dropdown');
-            dropdown.classList.toggle('active');
-        }
-      </script>
-      
-
-  <div class="image-container">
-    <img id="image" src="" alt="Image" style="width: 100%; height: auto;">
-
-    <div class="tags" id="tags">
+  <!-- navbar -->
+  <header class="navbar">
+    <a href="index.html" class="wordmark">TKT.archive</a>
+    <div class="nav-icons">
+      <div class="divider"></div>
+      <a href="global_src.html"><div class="icon"><img src="icons/globe.png" alt="World" /></div></a>
+      <a href="library.html"><div class="icon"><img src="icons/Folder_open_alt.png" alt="Library" /></div></a>
+      <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
+      <a href="about.html"><div class="icon"><img src="icons/Info.png" alt="About" /></div></a>
+      <a href="upload.html"><div class="icon"><img src="icons/Load_list_alt_light@3x.png" alt="Upload" /></div></a>
     </div>
 
-    <script>
-      const tagMapping = {
-         'tag1': 'Transport',
-         'tag2': 'General Admission',
-         'tag3': 'Service',
-         'tag4': 'Misc',
-        };
-  
-        //get image url and tags
+    <div class="menu-icon" onclick="toggleDropdown()">
+      <img src="icons/Menu.png" alt="Menu" />
+    </div>
+
+    <div class="dropdown">
+      <a href="global_src.html"><div class="icon"><img src="icons/globe.png" alt="World" /></div></a>
+      <a href="library.html"><div class="icon"><img src="icons/Folder_open_alt.png" alt="Library" /></div></a>
+      <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
+      <a href="about.html"><div class="icon"><img src="icons/Info.png" alt="About" /></div></a>
+      <a href="upload.html"><div class="icon"><img src="icons/Load_list_alt_light@3x.png" alt="Upload" /></div></a>
+    </div>
+  </header>
+
+  <!-- Toggle dropdown JS -->
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('active');
+    }
+  </script>
+
+ 
+  <div class="image-container">
+    <img id="image" src="" alt="Image" />
+
+    <div class="tags" id="tags"></div>
+
+    <div class="extra-info">
+      <p><strong>Submitted by:</strong> <span id="name"></span></p>
+      <p><strong>Description:</strong> <span id="description"></span></p>
+      <p><strong>Source:</strong> <span id="source"></span></p>
+    </div>
+  </div>
+
+  <!-- data loader script -->
+  <script>
+    const tagMapping = {
+      'tag1': 'Transport',
+      'tag2': 'General Admission',
+      'tag3': 'Service',
+      'tag4': 'Misc',
+    };
+
     const urlParams = new URLSearchParams(window.location.search);
     const image = urlParams.get('image');
     const tags = urlParams.get('tags');
+    const name = urlParams.get('name');
+    const description = urlParams.get('description');
+    const source = urlParams.get('source');
 
-    //set image source
+    // image
     document.getElementById('image').src = image;
 
+    // tags
     if (tags) {
       const tagList = tags.split(',');
-      const tagsContainer = document.getElementById('tags');
-      const mappedTags = tagList.map(tag => tagMapping[tag]);
-        // display tags w/ names
-        tagsContainer.innerHTML = '<strong>Tags:</strong> ' + mappedTags.join(', ');
+      const mappedTags = tagList.map(tag => tagMapping[tag] || tag);
+      document.getElementById('tags').innerHTML = `<strong>Tags:</strong> ${mappedTags.join(', ')}`;
     }
 
-   
-</script>
+    // additional info
+    document.getElementById('name').textContent = name || 'Unknown';
+    document.getElementById('description').textContent = description || '—';
+    document.getElementById('source').textContent = source || '—';
   </script>
+
   <script src="random.js"></script>
 </body>
 </html>
