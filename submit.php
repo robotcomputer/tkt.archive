@@ -1,51 +1,56 @@
 <?php
-$uploadDir = 'uploads/';
-if (!file_exists($uploadDir)) {
-    mkdir($uploadDir, 0777, true);
-}
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $file = $_FILES['photo'];
+// Email address submissions will go to
+$to = "youremail@example.com";
 
-    $name = htmlspecialchars($_POST['name'] ?? '');
-    $type = htmlspecialchars($_POST['type'] ?? '');
-    $description = htmlspecialchars($_POST['description'] ?? '');
-    $source = htmlspecialchars($_POST['source'] ?? '');
+// Get form data
+$name = htmlspecialchars($_POST['name']);
+$type = htmlspecialchars($_POST['type']);
+$description = htmlspecialchars($_POST['description']);
+$source = htmlspecialchars($_POST['source']);
 
-    if (isset($file) && $file['error'] === 0) {
-        $filename = basename($file['name']);
-        $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-        $allowedExts = ['jpg', 'jpeg', 'png'];
+// Get uploaded file
+$file = $_FILES['photo'];
 
-        // make sure file type is allowed
-        if (in_array($ext, $allowedExts)) {
-            $uniqueName = uniqid('img_') . '.' . $ext;
-            $targetPath = $uploadDir . $uniqueName;
+if ($file['error'] === UPLOAD_ERR_OK) {
+    $fileTmpPath = $file['tmp_name'];
+    $fileName = basename($file['name']);
+    $fileSize = $file['size'];
+    $fileType = $file['type'];
+    $fileContent = chunk_split(base64_encode(file_get_contents($fileTmpPath)));
 
-            if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-                // save metadata
-                $entry = [
-                    'name' => $name,
-                    'type' => $type,
-                    'description' => $description,
-                    'source' => $source,
-                    'file' => $targetPath,
-                    'time' => date('Y-m-d H:i:s')
-                ];
+    // Email headers
+    $boundary = md5(time());
+    $headers = "From: TKT.archive <no-reply@yourdomain.com>\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
-                file_put_contents('data.txt', json_encode($entry) . PHP_EOL, FILE_APPEND);
+    // Email body
+    $body = "--$boundary\r\n";
+    $body .= "Content-Type: text/plain; charset=\"UTF-8\"\r\n";
+    $body .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+    $body .= "New submission received from TKT.archive:\n\n";
+    $body .= "Name: $name\n";
+    $body .= "Type: $type\n";
+    $body .= "Description: $description\n";
+    $body .= "Source: $source\n\n";
 
-                echo "✅ Upload successful! Thank you for your submission.";
-            } else {
-                echo "❌ Error moving uploaded file.";
-            }
-        } else {
-            echo "❌ Invalid file type. Only JPG and PNG allowed.";
-        }
+    // Attachment
+    $body .= "--$boundary\r\n";
+    $body .= "Content-Type: $fileType; name=\"$fileName\"\r\n";
+    $body .= "Content-Disposition: attachment; filename=\"$fileName\"\r\n";
+    $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
+    $body .= $fileContent . "\r\n";
+    $body .= "--$boundary--";
+
+    // Send email
+    if (mail($to, "New Archive Submission", $body, $headers)) {
+        echo "Submission sent successfully.";
     } else {
-        echo "❌ No valid file uploaded.";
+        echo "Failed to send submission.";
     }
+
 } else {
-    echo "❌ Invalid request.";
+    echo "There was an error uploading the file.";
 }
 ?>
