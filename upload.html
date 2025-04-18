@@ -365,88 +365,85 @@ h2 {
     
     <div class="content-box">
       <!-- FORM START -->
-      <form action="submit.php" method="POST" enctype="multipart/form-data">
-        <div class="upload-form-container">
+    <form action="https://formspree.io/f/xldjynkz" method="POST" enctype="multipart/form-data">
+  <div class="upload-form-container">
 
-          <!-- upload box -->
-          <label class="upload-photo-box" for="file-upload">
-            <div class="icon-wrapper">
-              <img src="icons/Img_load_box.svg" alt="Upload Icon" class="upload-icon" />
-            </div>
+    <!-- upload box -->
+    <label class="upload-photo-box" for="file-upload">
+      <div class="icon-wrapper">
+        <img src="icons/Img_load_box.svg" alt="Upload Icon" class="upload-icon" />
+      </div>
 
-            <div class="info-icon-wrapper">
-              <div class="info-icon">
-                <img src="icons/Info2.svg" alt="Info" />
-                <span class="tooltip-text">
-                  + only scans, and high quality images<br>
-                  + physical damage / faded by time is okay<br>
-                  + .jpg or .png accepted<br>
-                  - No phone photos<br>
-                  - No uncensored, identifying information
-                </span>
-              </div>
-            </div>
-
-            <div class="upload-stack">
-              <div class="upload-text"><p>upload.photo</p></div>
-              <input type="file" name="photo" id="file-upload" class="file-input" accept=".jpg,.jpeg,.png" required />
-            </div>
-          </label>
-
-          <!-- form fields -->
-          <div class="form-info">
-            <div class="input-box">
-              <label for="name">Name:</label>
-              <div class="info-icon">
-                <img src="icons/Info2.svg" alt="Info" />
-                <span class="tooltip-text">Enter the name as you'd like it displayed in the archive.</span>
-              </div>
-              <input type="text" id="name" name="name" required />
-            </div>
-
-            <div class="input-box">
-              <label for="type">Type:</label>
-              <div class="info-icon">
-                <img src="icons/Info2.svg" alt="Info" />
-                <span class="tooltip-text">Choose a category or leave blank.</span>
-              </div>
-              <select id="type" name="type">
-                <option value="">--</option>
-                <option value="transport">Transport</option>
-                <option value="general-admission">General Admission</option>
-                <option value="service">Service</option>
-                <option value="misc">Misc.</option>
-              </select>
-            </div>
-
-            <div class="input-box">
-              <label for="description">Description:</label>
-              <div class="info-icon">
-                <img src="icons/Info2.svg" alt="Info" />
-                <span class="tooltip-text">Give context or details about the image.</span>
-              </div>
-              <input type="text" id="description" name="description" />
-            </div>
-
-            <div class="input-box">
-              <label for="source">Source:</label>
-              <div class="info-icon">
-                <img src="icons/Info2.svg" alt="Info" />
-                <span class="tooltip-text">Where is this from?</span>
-              </div>
-              <input type="text" id="source" name="source" />
-            </div>
-
-            <div class="input-box">
-              <button type="submit" class="submit-button">Submit</button>
-            </div>
-          </div>
+      <div class="info-icon-wrapper">
+        <div class="info-icon">
+          <img src="icons/Info2.svg" alt="Info" />
+          <span class="tooltip-text">
+            + only scans, and high quality images<br>
+            + physical damage / faded by time is okay<br>
+            + .jpg or .png accepted<br>
+            - No phone photos<br>
+            - No uncensored, identifying information
+          </span>
         </div>
-      </form>
-      <!-- form end -->
+      </div>
+
+      <div class="upload-stack">
+        <div class="upload-text"><p>upload.photo</p></div>
+        <!-- Note: file input won’t be attached in email -->
+        <input type="file" name="photo" id="file-upload" class="file-input" accept=".jpg,.jpeg,.png" />
+      </div>
+    </label>
+
+    <!-- form fields -->
+    <div class="form-info">
+      <div class="input-box">
+        <label for="name">Name:</label>
+        <div class="info-icon">
+          <img src="icons/Info2.svg" alt="Info" />
+          <span class="tooltip-text">Enter the name as you'd like it displayed in the archive.</span>
+        </div>
+        <input type="text" id="name" name="Name" required />
+      </div>
+
+      <div class="input-box">
+        <label for="type">Type:</label>
+        <div class="info-icon">
+          <img src="icons/Info2.svg" alt="Info" />
+          <span class="tooltip-text">Choose a category or leave blank.</span>
+        </div>
+        <select id="type" name="Type">
+          <option value="">--</option>
+          <option value="Transport">Transport</option>
+          <option value="General Admission">General Admission</option>
+          <option value="Service">Service</option>
+          <option value="Misc.">Misc.</option>
+        </select>
+      </div>
+
+      <div class="input-box">
+        <label for="description">Description:</label>
+        <div class="info-icon">
+          <img src="icons/Info2.svg" alt="Info" />
+          <span class="tooltip-text">Give context or details about the image.</span>
+        </div>
+        <input type="text" id="description" name="Description" />
+      </div>
+
+      <div class="input-box">
+        <label for="source">Source:</label>
+        <div class="info-icon">
+          <img src="icons/Info2.svg" alt="Info" />
+          <span class="tooltip-text">Where is this from?</span>
+        </div>
+        <input type="text" id="source" name="Source" />
+      </div>
+
+      <div class="input-box">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
     </div>
   </div>
-</div>
+</form>
 
 <script>
   function toggleDropdown() {
