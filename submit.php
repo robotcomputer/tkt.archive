@@ -1,60 +1,64 @@
 <?php
-// Include PHPMailer files (adjust the path if needed)
-require 'PHPMailerAutoload.php'; // Or the file location where you downloaded PHPMailer
+// Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Email address submissions will go to
-$to = "youremail@example.com"; // Adjust to the recipient email address
+// Load Composer's autoloader or manual includes if not using Composer
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
+
+// Email address to receive submissions
+$to = "tkt.arcv@gmail.com"; // Change this to your real email
 
 // Get form data
-$name = htmlspecialchars($_POST['name']);
-$type = htmlspecialchars($_POST['type']);
-$description = htmlspecialchars($_POST['description']);
-$source = htmlspecialchars($_POST['source']);
+$name = htmlspecialchars($_POST['Name']);
+$type = htmlspecialchars($_POST['Type']);
+$description = htmlspecialchars($_POST['Description']);
+$source = htmlspecialchars($_POST['Source']);
 
-// Get uploaded file
+// File
 $file = $_FILES['photo'];
 
 // Create a new PHPMailer instance
-$mail = new PHPMailer;
+$mail = new PHPMailer(true); // `true` enables exceptions
 
-$mail->isSMTP();  // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Set the SMTP server to Gmail
-$mail->SMTPAuth = true;  // Enable SMTP authentication
-$mail->Username = 'youremail@gmail.com';  // Your Gmail email address
-$mail->Password = 'your-app-specific-password';  // The app-specific password you created
-$mail->SMTPSecure = 'tls';  // Enable TLS encryption
-$mail->Port = 587;  // TCP port to connect to
+try {
+    // Server settings
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';                       // Gmail SMTP server
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'tkt.arcv@gmail.com';              // Your Gmail address
+    $mail->Password = 'ucbt yciy efna lnpi';                // Your app-specific password
+    $mail->SMTPSecure = 'tls';                            // TLS encryption
+    $mail->Port = 587;                                    // TCP port
 
-// Sender's and recipient's details
-$mail->setFrom('youremail@gmail.com', 'TKT.archive');  // Sender's email
-$mail->addAddress($to, 'Recipient Name');  // Recipient's email
+    // Recipients
+    $mail->setFrom('tkt.arcv@gmail.com', 'TKT.archive'); // Sender info
+    $mail->addAddress($to, 'Archive Submission');         // Recipient
 
-// Email content
-$mail->isHTML(true);  // Set email format to HTML
-$mail->Subject = 'New Archive Submission';  // Email subject
-$mail->Body    = "New submission received from TKT.archive:<br><br>" .
-                 "Name: $name<br>" .
-                 "Type: $type<br>" .
-                 "Description: $description<br>" .
-                 "Source: $source<br><br>" .
-                 "<b>Attachment:</b><br>" .
-                 "<a href='link-to-image'>Click here to view the image</a>";
+    // Attach uploaded file if there is one
+    if ($file['error'] === UPLOAD_ERR_OK) {
+        $fileTmpPath = $file['tmp_name'];
+        $fileName = basename($file['name']);
+        $mail->addAttachment($fileTmpPath, $fileName);
+    }
 
-// If a file was uploaded
-if ($file['error'] === UPLOAD_ERR_OK) {
-    $fileTmpPath = $file['tmp_name'];
-    $fileName = basename($file['name']);
-    $fileSize = $file['size'];
-    $fileType = $file['type'];
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = 'New Archive Submission';
+    $mail->Body    = "
+        <h2>New submission received from TKT.archive:</h2>
+        <p><strong>Name:</strong> $name</p>
+        <p><strong>Type:</strong> $type</p>
+        <p><strong>Description:</strong> $description</p>
+        <p><strong>Source:</strong> $source</p>
+        <p><strong>Attachment:</strong> Image attached.</p>
+    ";
 
-    // Attach the file
-    $mail->addAttachment($fileTmpPath, $fileName);
-}
-
-// Send email
-if(!$mail->send()) {
-    echo 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message has been sent';
+    $mail->send();
+    echo "Message has been sent successfully!";
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 ?>
