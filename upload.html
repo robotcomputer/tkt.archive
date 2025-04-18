@@ -329,135 +329,132 @@ h2 {
 
 <body>
   <header class="navbar">
-    <a href="index.html" class="wordmark">TKT.archive</a></div>
+    <a href="index.html" class="wordmark">TKT.archive</a>
     <div class="nav-icons">
-        <div class="divider"></div>
-        <a href="global_src.html"><div class="icon"><img src="icons\globe.png" alt="World" /></a></div>
-        <a href="library.html"><div class="icon"><img src="icons\Folder_open_alt.png" alt="Library" /></a></div>
-        <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
-        <a href="about.html"><div class="icon"><img src="icons\Info.png" alt="About" /></a></div>
-        <a href="upload.html"><div class="icon"><img src="icons\Load_list_alt_light@3x.png" alt="Upload" /></a></div>
+      <div class="divider"></div>
+      <a href="global_src.html"><div class="icon"><img src="icons/globe.png" alt="World" /></div></a>
+      <a href="library.html"><div class="icon"><img src="icons/Folder_open_alt.png" alt="Library" /></div></a>
+      <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
+      <a href="about.html"><div class="icon"><img src="icons/Info.png" alt="About" /></div></a>
+      <a href="upload.html"><div class="icon"><img src="icons/Load_list_alt_light@3x.png" alt="Upload" /></div></a>
     </div>
 
+    <div class="menu-icon" onclick="toggleDropdown()">
+      <img src="icons/Menu.png" alt="Menu"/>
+    </div>
+    <div class="dropdown">
+      <a href="global_src.html"><div class="icon"><img src="icons/globe.png" alt="World" /></div></a>
+      <a href="library.html"><div class="icon"><img src="icons/Folder_open_alt.png" alt="Library" /></div></a>
+      <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
+      <a href="about.html"><div class="icon"><img src="icons/Info.png" alt="About" /></div></a>
+      <a href="upload.html"><div class="icon"><img src="icons/Load_list_alt_light@3x.png" alt="Upload" /></div></a>
+    </div>
+  </header>
 
-<div class="menu-icon" onclick="toggleDropdown()">
-  <img src="icons\Menu.png" alt="Menu"/>
-</div>
-</div>
-
-<div class="dropdown">
-  <a href="global_src.html"><div class="icon"><img src="icons\globe.png" alt="World" /></a></div>
-  <a href="library.html"><div class="icon"><img src="icons\Folder_open_alt.png" alt="Library" /></a></div>
-  <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
-  <a href="about.html"><div class="icon"><img src="icons\Info.png" alt="About" /></a></div>
-  <a href="upload.html"><div class="icon"><img src="icons\Load_list_alt_light@3x.png" alt="Upload" /></a></div>
-</div>
-</header>
-
-<div class="main-content">
+  <div class="main-content">
     <div class="submit-box">
       <h1>Submit</h1>
       <div class="line"></div>
     </div>
 
-    <!-- subheading Box -->
     <div class="subheading-box">
       <h2>Be a part of the collective!</h2>
       <div class="line"></div>
-      <div class="content-box">
-       
-       
-       <!--upload photo-->
-       
-       <div class="upload-form-container">
-        <div class="upload-photo-box">
+    </div>
+
+    
+    <div class="content-box">
+      <!-- FORM START -->
+      <form action="submit.php" method="POST" enctype="multipart/form-data">
+        <div class="upload-form-container">
+
+          <!-- upload box -->
+          <label class="upload-photo-box" for="file-upload">
             <div class="icon-wrapper">
-                <img src="icons\Img_load_box.svg" alt="Upload Icon" class="upload-icon">
+              <img src="icons/Img_load_box.svg" alt="Upload Icon" class="upload-icon" />
             </div>
 
             <div class="info-icon-wrapper">
               <div class="info-icon">
                 <img src="icons/Info2.svg" alt="Info" />
-                <span class="tooltip-text">+ only scans, and high quality images <br>
-                  + physical damage/ faded by time is okay <br>
+                <span class="tooltip-text">
+                  + only scans, and high quality images<br>
+                  + physical damage / faded by time is okay<br>
                   + .jpg or .png accepted<br>
                   - No phone photos<br>
-                  - No uncensored, identifying information</span>
+                  - No uncensored, identifying information
+                </span>
               </div>
             </div>
 
             <div class="upload-stack">
-            <div class="upload-text">
-                <p>upload.photo</p>
+              <div class="upload-text"><p>upload.photo</p></div>
+              <input type="file" name="photo" id="file-upload" class="file-input" accept=".jpg,.jpeg,.png" required />
             </div>
-            <input type="file" id="file-upload" class="file-input" />
+          </label>
+
+          <!-- form fields -->
+          <div class="form-info">
+            <div class="input-box">
+              <label for="name">Name:</label>
+              <div class="info-icon">
+                <img src="icons/Info2.svg" alt="Info" />
+                <span class="tooltip-text">Enter the name as you'd like it displayed in the archive.</span>
+              </div>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="input-box">
+              <label for="type">Type:</label>
+              <div class="info-icon">
+                <img src="icons/Info2.svg" alt="Info" />
+                <span class="tooltip-text">Choose a category or leave blank.</span>
+              </div>
+              <select id="type" name="type">
+                <option value="">--</option>
+                <option value="transport">Transport</option>
+                <option value="general-admission">General Admission</option>
+                <option value="service">Service</option>
+                <option value="misc">Misc.</option>
+              </select>
+            </div>
+
+            <div class="input-box">
+              <label for="description">Description:</label>
+              <div class="info-icon">
+                <img src="icons/Info2.svg" alt="Info" />
+                <span class="tooltip-text">Give context or details about the image.</span>
+              </div>
+              <input type="text" id="description" name="description" />
+            </div>
+
+            <div class="input-box">
+              <label for="source">Source:</label>
+              <div class="info-icon">
+                <img src="icons/Info2.svg" alt="Info" />
+                <span class="tooltip-text">Where is this from?</span>
+              </div>
+              <input type="text" id="source" name="source" />
+            </div>
+
+            <div class="input-box">
+              <button type="submit" class="submit-button">Submit</button>
+            </div>
+          </div>
         </div>
-      </div>
-              
-<!-- form  -->
-<div class="form-info">
-  <div class="input-box">
-    <label for="name">Name:</label>
-    <div class="info-icon">
-      <img src="icons/Info2.svg" alt="Info" />
-      <span class="tooltip-text">Enter the name as you'd like it displayed in the archive.</span>
+      </form>
+      <!-- form end -->
     </div>
-    <input type="text" id="name" name="name" />
-  </div>
-  
-  <div class="input-box">
-    <label for="type">Type:</label>
-    <div class="info-icon">
-      <img src="icons/Info2.svg" alt="Info" />
-      <span class="tooltip-text">Choose the category that best describes your submission or leave it blank if you are unsure.</span>
-    </div>
-    <select id="type" name="type">
-      <option value="blank"></option>
-      <option value="transport">Transport</option>
-      <option value="general-admission">General Admission</option>
-      <option value="service">Service</option>
-      <option value="misc">Misc.</option>
-    </select>
-  </div>
-
-  <div class="input-box">
-    <label for="description">Description:</label>
-    <div class="info-icon">
-      <img src="icons/Info2.svg" alt="Info" />
-      <span class="tooltip-text">Write a short description to give context or add any details about the image or submission.</span>
-    </div>
-    <input type="text" id="description" name="description" />
-  </div>
-
-  <div class="input-box">
-    <label for="source">Source:</label>
-    <div class="info-icon">
-      <img src="icons/Info2.svg" alt="Info" />
-      <span class="tooltip-text">Provide the source or origin of the content you're submitting.</span>
-    </div>
-    <input type="text" id="source" name="source" />
-  </div>
-  <div class= "input-box">
-    <button type="submit" class="submit-button">Submit</button>
   </div>
 </div>
 
-
-
-
-      </div>
-    </div>
-  </div>
-
-
 <script>
   function toggleDropdown() {
-      const dropdown = document.querySelector('.dropdown');
-      dropdown.classList.toggle('active');
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('active');
   }
 </script>
 
 <script src="random.js"></script>
-
 </body>
 </html>
