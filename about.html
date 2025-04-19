@@ -64,13 +64,13 @@
 
 .id-info {
   text-align: left;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.4;
 }
 
 .id-info h3 {
   margin-bottom: 8px;
-  font-size: 20px;
+  font-size: 24px;
   color: #424140;
   letter-spacing: 1px;
 }
@@ -82,9 +82,9 @@
 
 .barcode {
   position: absolute;
-  bottom: 20px;
+  bottom: 5px;
   left: 20px;
-  width: 160px;
+  width: 150px;
 }
 
 .barcode img {
@@ -138,29 +138,58 @@
 
 
 <body>
-    <header class="navbar">
-        <a href="index.html" class="wordmark">TKT.archive</a></div>
-        <div class="nav-icons">
-            <div class="divider"></div>
-            <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
-            <a href="about.html"><div class="icon"><img src="icons\Info.png" alt="About" /></a></div>
-            <a href="upload.html"><div class="icon"><img src="icons\Load_list_alt_light@3x.png" alt="Upload" /></a></div>
+  <header class="navbar">
+    <a href="index.html" class="wordmark">TKT.archive</a>
+  
+    <div class="nav-icons">
+      <div class="divider"></div>
+  
+      <div class="icon tooltip random-trigger">
+        <img src="icons/Regroup.png" alt="Random" />
+        <span class="tooltip-text">Random</span>
+      </div>
+  
+      <a href="about.html">
+        <div class="icon tooltip">
+          <img src="icons/Info.png" alt="About" />
+          <span class="tooltip-text">About</span>
         </div>
-    
-    
+      </a>
+  
+      <a href="upload.html">
+        <div class="icon tooltip">
+          <img src="icons/Load_list_alt_light@3x.png" alt="Upload" />
+          <span class="tooltip-text">Upload</span>
+        </div>
+      </a>
+    </div>
+  
     <div class="menu-icon" onclick="toggleDropdown()">
-      <img src="icons\Menu.png" alt="Menu"/>
+      <img src="icons/Menu.png" alt="Menu" />
     </div>
-    </div>
-    
+  
     <div class="dropdown">
-      <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
-      <a href="about.html"><div class="icon"><img src="icons\Info.png" alt="About" /></a></div>
-      <a href="upload.html"><div class="icon"><img src="icons\Load_list_alt_light@3x.png" alt="Upload" /></a></div>
+      <div class="icon tooltip random-trigger">
+        <img src="icons/Regroup.png" alt="Random" />
+        <span class="tooltip-text">Random</span>
+      </div>
+  
+      <a href="about.html">
+        <div class="icon tooltip">
+          <img src="icons/Info.png" alt="About" />
+          <span class="tooltip-text">About</span>
+        </div>
+      </a>
+  
+      <a href="upload.html">
+        <div class="icon tooltip">
+          <img src="icons/Load_list_alt_light@3x.png" alt="Upload" />
+          <span class="tooltip-text">Upload</span>
+        </div>
+      </a>
     </div>
-    
-    
-    </header>
+  </header>
+  
     
     <script>
       function toggleDropdown() {
@@ -196,7 +225,12 @@
       </div>
     </div>
 
-
+    <div style="max-width: 600px; margin: 0 auto; text-align: center; padding: 40px 20px; font-family: 'Handjet', sans-serif; font-size: 20px; color: #EEEBE1; line-height: 1.6;">
+      <p>
+        Submitted images and descriptions are only used for archival and display purposes on TKT.archive. If you have any questions, concerns, or would like your submission removed, please email us at 
+        <a href="mailto:tkt.arcv@gmail.com" style="color: #EEEBE1; text-decoration: underline;">tkt.arcv@gmail.com</a>.
+      </p>
+    </div>
 
 
 
