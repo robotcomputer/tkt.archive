@@ -32,7 +32,7 @@ try {
     $mail->Host = 'smtp.gmail.com';                       // Gmail SMTP server
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'tkt.arcv@gmail.com';              // Your Gmail address
-    $mail->Password = 'your_app_specific_password';      // Your app-specific password
+    $mail->Password = 'ucbt yciy efna lnpi';      // Your app-specific password
     $mail->SMTPSecure = 'tls';                            // TLS encryption
     $mail->Port = 587;                                    // TCP port
 
