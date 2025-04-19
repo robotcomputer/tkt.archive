@@ -1,5 +1,4 @@
 <?php
-
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -33,7 +32,7 @@ try {
     $mail->Host = 'smtp.gmail.com';                       // Gmail SMTP server
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'tkt.arcv@gmail.com';              // Your Gmail address
-    $mail->Password = 'ucbt yciy efna lnpi';                // Your app-specific password
+    $mail->Password = 'your_app_specific_password';      // Your app-specific password
     $mail->SMTPSecure = 'tls';                            // TLS encryption
     $mail->Port = 587;                                    // TCP port
 
@@ -60,8 +59,12 @@ try {
         <p><strong>Attachment:</strong> Image attached.</p>
     ";
 
-    $mail->send();
-    echo "Message has been sent successfully!";
+    // Send the email
+    if ($mail->send()) {
+        echo "Message has been sent successfully!";
+    } else {
+        echo "Message could not be sent.";
+    }
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
