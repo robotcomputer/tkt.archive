@@ -30,8 +30,6 @@
     <a href="index.html" class="wordmark">TKT.archive</a>
     <div class="nav-icons">
       <div class="divider"></div>
-      <a href="global_src.html"><div class="icon"><img src="icons/globe.png" alt="World" /></div></a>
-      <a href="library.html"><div class="icon"><img src="icons/Folder_open_alt.png" alt="Library" /></div></a>
       <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
       <a href="about.html"><div class="icon"><img src="icons/Info.png" alt="About" /></div></a>
       <a href="upload.html"><div class="icon"><img src="icons/Load_list_alt_light@3x.png" alt="Upload" /></div></a>
@@ -42,8 +40,6 @@
     </div>
 
     <div class="dropdown">
-      <a href="global_src.html"><div class="icon"><img src="icons/globe.png" alt="World" /></div></a>
-      <a href="library.html"><div class="icon"><img src="icons/Folder_open_alt.png" alt="Library" /></div></a>
       <div class="icon random-trigger"><img src="icons/Regroup.png" alt="Random" /></div>
       <a href="about.html"><div class="icon"><img src="icons/Info.png" alt="About" /></div></a>
       <a href="upload.html"><div class="icon"><img src="icons/Load_list_alt_light@3x.png" alt="Upload" /></div></a>
@@ -100,7 +96,12 @@
     // additional info
     document.getElementById('name').textContent = name || 'Unknown';
     document.getElementById('description').textContent = description || '—';
-    document.getElementById('source').textContent = source || '—';
+    const sourceElem = document.getElementById('source');
+if (source && source.startsWith('http')) {
+  sourceElem.innerHTML = `<a href="${decodeURIComponent(source)}" target="_blank">${decodeURIComponent(source)}</a>`;
+} else {
+  sourceElem.textContent = source || '—';
+}
   </script>
 
   <script src="random.js"></script>
